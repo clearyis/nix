@@ -1,0 +1,2 @@
+# nixcore
+Nix Setup
