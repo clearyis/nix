@@ -8,10 +8,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    alacritty
-    brave
-    firefox
-    tofi
 
   ];
 
