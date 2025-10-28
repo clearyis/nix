@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware = {
-      url = "github:NixOS/nixos-hardware";
+      url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     omarchy-nix = {
@@ -20,11 +20,12 @@
     };
   };
 
-  outputs = { nixpkgs, omarchy-nix, home-manager, ... } @ inputs: {
+  outputs = { nixpkgs, omarchy-nix, home-manager, nixos-hardware, ... } @ inputs: {
 
     nixosConfigurations.fw12 = nixpkgs.lib.nixosSystem {
       modules = [
         ./hosts/fw12/configuration.nix
+	nixos-hardware.nixosModules.framework-12-13th-gen-intel
       ];
     };
 
