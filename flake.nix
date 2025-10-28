@@ -6,6 +6,7 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
     omarchy-nix = {
       #url = "path:/home/dylan/omarchy-nix-personal/omarchy-nix";
       #url = "github:henrysipp/omarchy-nix";
