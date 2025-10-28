@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      "{nixos-hardware}/framework/12-inch/13th-gen-intel"
     ];
 
   # Bootloader.
