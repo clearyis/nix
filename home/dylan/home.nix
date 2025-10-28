@@ -12,6 +12,7 @@
   ];
 
   imports = [
+    ./modules
   ];
   
 }

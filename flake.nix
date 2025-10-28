@@ -7,9 +7,9 @@
       url = "github:NixOS/nixos-hardware/master";
     };
     omarchy-nix = {
-      #url = "path:/home/dylan/omarchy-nix-personal/omarchy-nix";
+      url = "path:/home/dylan/omarchy-nix";
       #url = "github:henrysipp/omarchy-nix";
-      url = "github:clearyis/omarchy-nix";
+      #url = "github:clearyis/omarchy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
@@ -39,7 +39,10 @@
           omarchy = {
             full_name = "Dylan";
             email_address = "dylan@cleary.org";
-            theme = "tokyo-night";
+            theme = "generated_dark";
+	    theme_overrides = {
+	      wallpaper_path = ./modules/assets/wallpaper/skyline.jpg;
+	    };
           };
 	  home-manager = {
 	    users.dylan = {
