@@ -4,15 +4,11 @@
 
 { config, pkgs, ... }:
 
-let
-  nixos-hardware = 
-    builtins.fetchTarball
-  "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
-in {
+{
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${nixos-hardware}/framework/12-inch/13th-gen-intel")
+      nixos-hardware.nixosModules.framework-12-13th-gen-intel
     ];
 
   # Bootloader.
