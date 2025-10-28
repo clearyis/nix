@@ -38,7 +38,9 @@
 	    nixpkgs.config.allowUnfree = true;
 	      imports = [
 	        omarchy-nix.homeManagerModules.default
-	        ./home/dylan/home.nix		];
+	        ./home/dylan/home.nix
+		./home/dylan/hosts/fwork/packages.nix
+	      ];
 	    };
 	  };  
         }

@@ -511,7 +511,7 @@
       },
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-QS9gx0xqTmhGHWg5NUrvpRgSLDbH1YV1jiURV6zAxWA=",
+        "narHash": "sha256-r8Qb7exBx5fUYyo0n8WtnAAMg/zGuWDK7BpEGkrwIBE=",
         "path": "/home/dylan/omarchy-nix-personal/omarchy-nix",
         "type": "path"
       },
