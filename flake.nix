@@ -24,7 +24,7 @@
     nixosConfigurations.fwork = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # this is the important part
       modules = [
-        ./configuration.nix
+        ./hosts/fwork/configuration.nix
         omarchy-nix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
