@@ -2,7 +2,7 @@
   description = "Simple Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     omarchy-nix = {
       url = "path:/home/dylan/omarchy-nix-personal/omarchy-nix";
       #url = "github:henrysipp/omarchy-nix";
@@ -14,10 +14,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fw-fanctrl = {
+      url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, omarchy-nix, home-manager, ... }: {
+  outputs = { nixpkgs, omarchy-nix, home-manager, ... } @ inputs: {
     nixosConfigurations.fwork = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; }; # this is the important part
       modules = [
         ./configuration.nix
         omarchy-nix.nixosModules.default
