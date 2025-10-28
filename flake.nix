@@ -32,6 +32,7 @@
       specialArgs = { inherit inputs; }; # this is the important part
       modules = [
         ./hosts/fwork/configuration.nix
+	nixos-hardware.nixosModules.framework-13-7040-amd
         omarchy-nix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
