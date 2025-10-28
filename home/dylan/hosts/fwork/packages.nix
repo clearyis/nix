@@ -8,6 +8,7 @@
     chromium
     easyeffects
     firefox
+    fw-fanctrl
     mullvad-browser
     mullvad-vpn
     signal-desktop
