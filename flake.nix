@@ -21,6 +21,13 @@
   };
 
   outputs = { nixpkgs, omarchy-nix, home-manager, ... } @ inputs: {
+
+    nixosConfigurations.fw12 = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/fw12/configuration.nix
+      ];
+    };
+
     nixosConfigurations.fwork = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # this is the important part
       modules = [
@@ -46,5 +53,6 @@
         }
       ];
     };
+
   };
 }
