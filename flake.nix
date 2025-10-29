@@ -23,6 +23,7 @@
 
     nixosConfigurations.fw12 = nixpkgs.lib.nixosSystem {
       modules = [
+	./common.nix
         ./hosts/fw12/configuration.nix
 	nixos-hardware.nixosModules.framework-12-13th-gen-intel
       ];
@@ -31,6 +32,7 @@
     nixosConfigurations.fwork = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # this is the important part
       modules = [
+	./common.nix
         ./hosts/fwork/configuration.nix
 	nixos-hardware.nixosModules.framework-13-7040-amd
         omarchy-nix.nixosModules.default

@@ -134,16 +134,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    btop
-    git
-    htop
     kdePackages.qtvirtualkeyboard
-    lf
-    neovim
-    powertop
-    unzip
-    vim
-    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
