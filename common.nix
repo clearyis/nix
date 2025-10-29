@@ -14,6 +14,7 @@
     less
     lf
     neovim
+    nh
     p7zip
     ripgrep
     tmux
@@ -27,6 +28,8 @@
     zstd
 
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.configurationLimit = 5;
 
