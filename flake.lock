@@ -488,14 +488,17 @@
         ]
       },
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-aaGXa/Jzyl9wppppHvGjP2kxNIBGBf7jmibxvn1jzHc=",
-        "path": "/home/dylan/.omarchy-nix",
-        "type": "path"
+        "lastModified": 1761856250,
+        "narHash": "sha256-/mgIGEfP9RWNrAgSMc6+8sq2N2FYSM3lCtZqNeAnM3g=",
+        "owner": "clearyis",
+        "repo": "omarchy-nix",
+        "rev": "7d64143213e306d984556333a6e4997dd497c84f",
+        "type": "github"
       },
       "original": {
-        "path": "/home/dylan/.omarchy-nix",
-        "type": "path"
+        "owner": "clearyis",
+        "repo": "omarchy-nix",
+        "type": "github"
       }
     },
     "pre-commit-hooks": {
