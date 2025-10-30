@@ -6,6 +6,7 @@
     alacritty
     brave
     bitwarden-desktop
+    busybox
     chromium
     easyeffects
     firefox
@@ -17,7 +18,6 @@
     prismlauncher
     signal-desktop
     spotify
-    gnutar
     thunderbird
     tree-sitter
     tofi
