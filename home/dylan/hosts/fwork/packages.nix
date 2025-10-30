@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # USER packages for THIS machine only
 
+    alacritty
     brave
     bitwarden-desktop
     chromium
