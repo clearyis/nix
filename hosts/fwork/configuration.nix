@@ -8,6 +8,12 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelParams = [
+    "amd_pstate=active"
+    "nvme_core.default_ps_max_latency_us=5500"
+    "pcie_aspm.policy=powersupersave"
+  ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
