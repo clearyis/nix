@@ -2,9 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -13,9 +16,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "fwork"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -56,8 +56,12 @@
     isNormalUser = true;
     description = "Dylan";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
+
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -68,6 +72,8 @@
   ];
 
   environment.variables.EDITOR = "neovim";
+
+  hardware.framework.enableKmod = lib.mkForce false;
 
   programs.steam = {
     enable = true;
