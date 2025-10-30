@@ -1,2 +1,2 @@
-# nixcore
+# clearyis NixOS Setup
 Nix Setup
