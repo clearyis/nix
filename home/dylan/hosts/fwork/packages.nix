@@ -14,6 +14,7 @@
     gnumake
     mullvad-browser
     mullvad-vpn
+    nextcloud-client
     nodejs
     prismlauncher
     signal-desktop
