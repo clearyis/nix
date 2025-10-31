@@ -93,6 +93,8 @@
 
   hardware.fw-fanctrl.enable = true;
 
+  services.logind.powerKey = "suspend";
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
