@@ -11,6 +11,11 @@
     grml-zsh-config
   ];
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.nix-profile/bin"
+  ];
+
   imports = [
     ./modules/default.nix
   ];
