@@ -66,6 +66,9 @@
     packages = with pkgs; [];
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
 
