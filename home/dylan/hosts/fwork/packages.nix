@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # USER packages for THIS machine only
+    # USER packages for fwork
 
     alacritty
     brave
@@ -14,6 +14,7 @@
     gnumake
     mullvad-browser
     mullvad-vpn
+    newsboat
     nextcloud-client
     nodejs
     prismlauncher
