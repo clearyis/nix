@@ -108,6 +108,7 @@
       easyeffects
       ghostty
       kdePackages.kate
+      krita
       libreoffice
       maliit-keyboard
       spotify
