@@ -7,9 +7,9 @@
       url = "github:NixOS/nixos-hardware/master";
     };
     omarchy-nix = {
-      #url = "path:/home/dylan/.omarchy-nix";
+      url = "path:/home/dylan/.omarchy-nix";
       #url = "github:henrysipp/omarchy-nix";
-      url = "github:clearyis/omarchy-nix";
+      #url = "github:clearyis/omarchy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
