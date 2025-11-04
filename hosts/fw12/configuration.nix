@@ -107,7 +107,6 @@
       chromium
       easyeffects
       ghostty
-      kalendar
       kdePackages.kate
       krita
       libreoffice
