@@ -12,7 +12,6 @@
     easyeffects
     firefox
     gcc
-    gnumake
     libreoffice
     mullvad-browser
     mullvad-vpn
@@ -25,7 +24,6 @@
     spotify
     thunderbird
     tree-sitter
-    tofi
 
   ];
 }

@@ -63,7 +63,7 @@
     isNormalUser = true;
     description = "Dylan";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     packages = with pkgs; [];
   };
 
@@ -71,7 +71,7 @@
   security.pam.services.greetd.enableGnomeKeyring = true;
 
   programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
+  environment.shells = [ pkgs.nushell ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
