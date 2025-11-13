@@ -6,7 +6,11 @@
 
 {
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
+  powerManagement = {
+    enable = true;
+  };
 
   boot.kernelParams = [
     "amd_pstate=active"
