@@ -5,10 +5,6 @@
   home.homeDirectory = "/home/dylan";
   home.stateVersion = "25.05";
 
-  imports = [
-    ./modules/default.nix
-  ];
-
   programs.home-manager.enable = true;
 
   fonts.fontconfig = {

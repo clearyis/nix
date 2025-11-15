@@ -2,7 +2,7 @@
 
 {
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" "cgroups" "pipe-operators" ];
 
     environment.systemPackages = with pkgs; [
             

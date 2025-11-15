@@ -16,7 +16,15 @@
     "amd_pstate=active"
     "nvme_core.default_ps_max_latency_us=5500"
     "pcie_aspm.policy=powersupersave"
+    "amdgpu.runpm=1"
+    "video.use_native_backlight=1"
+    "amdgpu.abmlevel=1"
   ];
+
+  boot.kernel.sysctl = {
+    "kernel.nmi_watchdog" = 0;
+    "kernel.timer_migration" = 1;
+  };
 
   imports =
     [ # Include the results of the hardware scan.
