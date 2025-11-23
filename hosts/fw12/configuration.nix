@@ -72,6 +72,7 @@
     drivers = with pkgs; [
       cups-filters
       cups-browsed
+      hplip
     ];
   };
 
@@ -97,7 +98,7 @@
     settings = {
       General = {
         Experimental = true;
-	FastConectable = true;
+      	FastConectable = true;
       };
       Policy = {
         AutoEnable = true;
