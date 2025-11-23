@@ -28,21 +28,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Printing
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
-  };
-
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -75,8 +60,20 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Printing
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
