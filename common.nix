@@ -22,6 +22,7 @@
       nushell
       p7zip
       ripgrep
+      syncthing
       tmux
       traceroute
       tree

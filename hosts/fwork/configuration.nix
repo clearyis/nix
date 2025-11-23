@@ -13,12 +13,10 @@
   };
 
   boot.kernelParams = [
-    "amd_pstate=active"
-    "nvme_core.default_ps_max_latency_us=5500"
-    "pcie_aspm.policy=powersupersave"
     "amdgpu.runpm=1"
     "video.use_native_backlight=1"
     "amdgpu.abmlevel=1"
+    "amd_pstate=active"
   ];
 
   boot.kernel.sysctl = {
@@ -44,7 +42,21 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  services.mullvad-vpn.enable = true;
+
+  # Printing
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -85,6 +97,14 @@
   programs.zsh.enable = true;
   environment.shells = [ pkgs.nushell ];
 
+  services.syncthing = {
+    enable = true;
+    user = "dylan";
+    dataDir = "/home/dylan";  # default location for new folders
+    configDir = "/home/dylan/.config/syncthing";
+    openDefaultPorts = true; # Open ports in the firewall for Syncthing. (NOTE: this will not open syncthing gui port)
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -107,6 +127,10 @@
   hardware.fw-fanctrl.enable = true;
 
   services.logind.settings.Login.HandlePowerKey = "suspend";
+
+  # Hypermilling
+  systemd.timers."fwupd-refresh".enable = false;
+  hardware.sensor.iio.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

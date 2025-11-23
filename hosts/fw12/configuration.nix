@@ -28,6 +28,21 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Printing
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
