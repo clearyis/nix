@@ -8,6 +8,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  # Hypermilling
   powerManagement = {
     enable = true;
   };
@@ -23,6 +24,11 @@
     "kernel.nmi_watchdog" = 0;
     "kernel.timer_migration" = 1;
   };
+
+  systemd.timers."fwupd-refresh".enable = false;
+  hardware.sensor.iio.enable = false;
+
+  powerManagement.powertop.enable = true;
 
   imports =
     [ # Include the results of the hardware scan.
@@ -95,9 +101,14 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
 
+  # Shell
   programs.zsh.enable = true;
   environment.shells = [ pkgs.nushell ];
 
+  # Editor
+  environment.variables.EDITOR = "nvim";
+
+  # Syncthing
   services.syncthing = {
     enable = true;
     user = "dylan";
@@ -105,6 +116,9 @@
     configDir = "/home/dylan/.config/syncthing";
     openDefaultPorts = true; # Open ports in the firewall for Syncthing. (NOTE: this will not open syncthing gui port)
   };
+
+  #tailscale
+  services.tailscale.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -114,24 +128,24 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  environment.variables.EDITOR = "neovim";
-
   hardware.framework.enableKmod = lib.mkForce false;
 
+  # Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
+  
+  # fw-fanctrl
   hardware.fw-fanctrl.enable = true;
+  
+  # ZSA
+  hardware.keyboard.zsa.enable = true;
 
+  # Power Key
   services.logind.settings.Login.HandlePowerKey = "suspend";
-
-  # Hypermilling
-  systemd.timers."fwupd-refresh".enable = false;
-  hardware.sensor.iio.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

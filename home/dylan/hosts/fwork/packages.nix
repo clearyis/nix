@@ -11,10 +11,11 @@
     chromium
     easyeffects
     firefox
+    gamescope
     gcc
-    libreoffice
+    keepassxc
+    libreoffice-fresh
     mullvad-browser
-    mullvad-vpn
     newsboat
     nextcloud-client
     nodejs

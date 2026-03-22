@@ -31,14 +31,6 @@
     ... } @ inputs: 
   {
 
-    nixosConfigurations.fw12 = nixpkgs.lib.nixosSystem {
-      modules = [
-	      ./common.nix
-        ./hosts/fw12/configuration.nix
-	      nixos-hardware.nixosModules.framework-12-13th-gen-intel
-      ];
-    };
-
     nixosConfigurations.fwork = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; }; # this is the important part
       modules = [
@@ -53,7 +45,7 @@
             email_address = "dylan@cleary.org";
             theme = "generated_dark";
 	          theme_overrides = {
-	            wallpaper_path = ./modules/assets/wallpaper/skyline.jpg;
+	            wallpaper_path = ./modules/assets/wallpaper/3601px-Bierstadt_-_Among_the_Sierra_Nevada_Mountains_-_1868.jpg;
 	            };
           };
 	        home-manager = {
